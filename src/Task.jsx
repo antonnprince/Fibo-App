@@ -5,23 +5,33 @@ import state from './store'
 
 const Task1 = () => {
     const snap = useSnapshot(state)
-    const [completed, setCompleted] = useState(false)
+    const [completed, setCompleted] = useState(true)
 
     const handleCheckboxChange = () => {     
-            if(completed===false && snap.count===0)
-                {
-                    state.count+=1
-                    setCompleted(true)
-                    
-                }                
+            
+        setCompleted(!completed)
+        
+        if(completed)
+            state.count++
+        
+        else
+            state.count--
 
-            if(completed===true && snap.count===1)
-                {
-                    state.count-=1
-                    setCompleted(false)
-                }
+            console.log("State: "+completed,"Count: ",state.count)
+        //    if(completed===false)
+        //     {
+        //         setCompleted(true)
+        //         console.log(completed, snap.count)
+        //     }
 
-            console.log(completed, snap.count)
+        //     if(completed===true)
+        //     {
+        //         setCompleted(false)
+        //         console.log(completed, snap.count)
+        //     }
+
+          
+            
       };
     
 
@@ -31,7 +41,7 @@ const Task1 = () => {
         <h2 className='mx-4'>Workout for 20 minutes</h2>
         <input type='checkbox' className='w-8 h-8 rounded-lg ml-auto bg-[#9e4cb8]'
         onClick={()=>{handleCheckboxChange()}}
-        checked={completed}
+       // checked={completed}
         />  
     </div>
   )
