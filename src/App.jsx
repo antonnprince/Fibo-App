@@ -1,16 +1,45 @@
 import './App.css'
 import target from './assets/target.svg'
 import heart from './assets/heart-beat.png'
-import Task1 from './Task.jsx'
 import state from './store.jsx'
 import { useSnapshot } from 'valtio'
-
+import workout from './assets/workout.svg'
+import fire from './assets/fire.svg'
+import walk from './assets/footprint.svg'
+import sleep from './assets/sleep.svg'
+import water from './assets/water.svg'
+import Task from './Task.jsx'
+import Swipe from './Swipe.jsx'
 function App() {
 
 const snap = useSnapshot(state)
 
+const content = [
+  {
+    imgSrc: workout,
+    task:'Workout for 20 mins'
+  },
+  
+  {
+    imgSrc: fire,
+    task:'Read book for 15 mins'
+  },
+  
+  {imgSrc: walk,
+    task:'30 mins walk',
+  }, 
+  {
+    imgSrc:sleep,
+    task:'Sleep at 11 sharp'
+  },
+  {
+    imgSrc:water,
+    task:'Drink 3L Water'
+  }
+  ]
+
   return (
-    <div className='m-8 bg-[#212121] p-4 w-1/4 mx-auto'>
+    <div className='m-8 bg-[#212121] p-4 w-1/4 mx-auto '>
 
         <div className='bg-[#1a7cd8] flex flex-row text-white w-auto  rounded-lg text-left p-2'>
             <img src={target} className='w-12 h-12  my-2' />
@@ -32,9 +61,15 @@ const snap = useSnapshot(state)
         </div>
 
         
-        <>
-        <Task1 />
-        </>
+        <div className='space-y-2'>
+          {
+            content.map((each)=>(
+              <Task image={each.imgSrc} des={each.task} />
+            ))
+          }
+
+          <Swipe/>
+        </div>
     </div>
   )
 }
