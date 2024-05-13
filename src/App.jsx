@@ -1,8 +1,13 @@
 import './App.css'
 import target from './assets/target.svg'
 import heart from './assets/heart-beat.png'
+import Task1 from './Task.jsx'
+import state from './store.jsx'
+import { useSnapshot } from 'valtio'
+
 function App() {
 
+const snap = useSnapshot(state)
 
   return (
     <div className='m-8 bg-[#212121] p-4 w-1/4 mx-auto'>
@@ -25,6 +30,11 @@ function App() {
           <h1  className='text-white text-left my-4'>Today's Goal</h1>
           <img src={heart} className='w-8 h-8 my-4'/>
         </div>
+
+        
+        <>
+        <Task1 />
+        </>
     </div>
   )
 }
