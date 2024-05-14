@@ -63,7 +63,7 @@ return (
         </div>
 
         <div className="flex flex-col text-xs self-end"> 
-        <div className="bg-[#1a7cd8] my-2 rounded-sm w-5" style={{height: `${snap.count *40}px`}}> </div>
+        <div className="bg-[#1a7cd8] my-2 rounded-sm w-5" style={{height: `${snap.count *40}px`}}><p className="my-[-15px]">{snap.count*20}%</p> </div>
         <h2 className="">{todayDay}/5</h2>
         </div>
         

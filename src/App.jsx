@@ -41,7 +41,7 @@ const content = [
   ]
 
   return (
-    <div className=' bg-[#212121] p-4  w-1/4 mx-auto rounded-xl'>
+    <div className=' bg-[#212121] p-4  w-1/4 mx-auto rounded-xl px-4'>
 
         <div className='bg-[#1a7cd8] flex flex-row text-white w-auto  rounded-xl text-left p-2'>
             <img src={target} className='w-12 h-12  my-2' />
