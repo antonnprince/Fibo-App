@@ -17,10 +17,10 @@ const Task=({image, des}) => {
       };
 
   return (
-    <div className='flex flex-row bg-[#282828] text-white p-2 py-4 rounded-lg '>
+    <div className='flex flex-row bg-[#282828] text-white p-2 py-4 '>
         <img src={image} className='w-8 h-8 bg-[#3d3d3d] p-2 rounded-lg '/>
         <h2 className='mx-4'>{des}</h2>
-        <input type='checkbox' className='w-8 h-8 rounded-lg ml-auto bg-[#9e4cb8]'
+        <input type='checkbox' className='w-8 h-8 rounded-lg ml-auto bg-[#9e4cb8]' 
         onClick={()=>{handleCheckboxChange()}}
        // checked={completed}
         />  
