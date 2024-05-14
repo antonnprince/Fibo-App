@@ -12,13 +12,8 @@ const Task=({image, des}) => {
         
         if(completed)
             state.count++
-        
         else
             state.count--
-
-            console.log("State: "+completed,"Count: ",state.count)
-
-        //     }
       };
 
   return (

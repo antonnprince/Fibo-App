@@ -10,6 +10,8 @@ import sleep from './assets/sleep.svg'
 import water from './assets/water.svg'
 import Task from './Task.jsx'
 import Swipe from './Swipe.jsx'
+import Graph from './Graph.jsx'
+
 function App() {
 
 const snap = useSnapshot(state)
@@ -39,16 +41,17 @@ const content = [
   ]
 
   return (
-    <div className='m-8 bg-[#212121] p-4 w-1/4 mx-auto '>
+    <div className=' bg-[#212121] p-4  w-1/4 mx-auto rounded-xl'>
 
-        <div className='bg-[#1a7cd8] flex flex-row text-white w-auto  rounded-lg text-left p-2'>
+        <div className='bg-[#1a7cd8] flex flex-row text-white w-auto  rounded-xl text-left p-2'>
             <img src={target} className='w-12 h-12  my-2' />
             <div className='flex flex-col space-y-1 mx-2'>
               <h1 className='text-sm'>Your Daily Goals Almost Done</h1>
               <p className='text-sm'>{snap.count} out of 5  completed</p>
               
+              {/* Progress bar */}
                 <div className="w-full bg-[#358cdd] rounded-full h-1 ">
-                  <div className="bg-[#bed7ef] h-1 rounded-full" style={{width: `${(snap.count/5)*100}%`}}></div>
+                  <div className="bg-[#bed7ef] h-1 rounded-full ease-in delay-100" style={{width: `${(snap.count/5)*100}%`}}></div>
                 </div> 
 
                 <h3 className='text-right text-xs'>{(snap.count/5)*100}%</h3>
@@ -61,7 +64,7 @@ const content = [
         </div>
 
         
-        <div className='space-y-2'>
+        <div className='space-y-4'>
           {
             content.map((each)=>(
               <Task image={each.imgSrc} des={each.task} />
@@ -69,6 +72,8 @@ const content = [
           }
 
           <Swipe/>
+
+          <Graph/>
         </div>
     </div>
   )
