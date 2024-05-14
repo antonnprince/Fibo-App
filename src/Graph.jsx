@@ -17,7 +17,7 @@ const todayDay = getTodayDay();
 
  
 return (
-    <div className='flex flex-row bg-[#282828] text-white rounded-xl space-x-2'>
+    <div className='flex flex-row bg-[#282828] text-white rounded-xl justify-between pr-2'>
       
       <div className="flex flex-col h-[200px] space-y-[25px] px-2 justify-center text-xs" >
         <h2>100%</h2>
